@@ -41,12 +41,11 @@ order by total_amount
 end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
-"select projects.category, sum(pledges.amount)
+"select projects.category, pledges.amount
 from pledges
 inner join projects
 on pledges.project_id = projects.id
 where projects.category = 'music'
-group by projects.category
 "
 end
 
